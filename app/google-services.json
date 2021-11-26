@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "54516659069",
+    "project_id": "qrcodeattendance-eead2",
+    "storage_bucket": "qrcodeattendance-eead2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54516659069:android:0fc068f2800fd136315214",
+        "android_client_info": {
+          "package_name": "com.amirmohammed.qrcodeattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54516659069-0b76ncd603lkqh0a5jv93m74e9eqtq42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRQ1VpLEt6Q69ylTLko0_31ts1wUQqirE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54516659069-0b76ncd603lkqh0a5jv93m74e9eqtq42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

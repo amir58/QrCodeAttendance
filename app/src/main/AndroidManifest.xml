@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.amirmohammed.qrcodeattendance">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QrCodeAttendance">
+        <activity
+            android:name=".ui.DoctorLectureDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DoctorAddNewLectureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ScanQrCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DoctorsLoginActivity"
+            android:exported="false" />
+        <activity android:name=".ui.StudentMainActivity" />
+        <activity android:name=".ui.StudentLoginActivity" />
+        <activity android:name=".ui.AuthenticationTypeActivity" />
+        <activity android:name=".ui.DoctorsMainActivity" />
+        <activity android:name=".ui.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
