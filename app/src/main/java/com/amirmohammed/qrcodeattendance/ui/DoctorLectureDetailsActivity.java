@@ -43,7 +43,7 @@ public class DoctorLectureDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_doctor_lecture_details);
 
-         lectureId = getIntent().getStringExtra("lectureId");
+        lectureId = getIntent().getStringExtra("lectureId");
 
         try {
             String qrCodeKey = doctorId + " " + lectureId;
@@ -62,14 +62,14 @@ public class DoctorLectureDetailsActivity extends AppCompatActivity {
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        List<String> previousLectures = new ArrayList<>();
+                        List<String> studentsName = new ArrayList<>();
                         for (DocumentSnapshot snapshot : value.getDocuments()){
                             String previousLectureId= snapshot.getString("studentName");
-                            previousLectures.add(previousLectureId);
+                            studentsName.add(previousLectureId);
                         }
-                        binding.tvTotalStudentsCount.setText("Students count : " + previousLectures.size());
+                        binding.tvTotalStudentsCount.setText("Students count : " + studentsName.size());
 
-                        PreviousLecturesAdapter previousLecturesAdapter = new PreviousLecturesAdapter(previousLectures);
+                        PreviousLecturesAdapter previousLecturesAdapter = new PreviousLecturesAdapter(studentsName);
                         binding.rvStudentsAttendance.setAdapter(previousLecturesAdapter);
                     }
                 });

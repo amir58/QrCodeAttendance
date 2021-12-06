@@ -74,6 +74,11 @@ public class DoctorAddNewLectureActivity extends AppCompatActivity {
     }
 
     public void createNewLecture(View view) {
+        if (selectedCourseName.isEmpty()) {
+            Toast.makeText(this, "course name required", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         String lectureName = binding.etLectureName.getText().toString();
 
         if (lectureName.isEmpty()) {
@@ -81,10 +86,6 @@ public class DoctorAddNewLectureActivity extends AppCompatActivity {
             return;
         }
 
-        if (selectedCourseName.isEmpty()) {
-            Toast.makeText(this, "course name required", Toast.LENGTH_LONG).show();
-            return;
-        }
 
         String lectureId = selectedCourseName + " " + lectureName;
         Map<String, Object> map = new HashMap<>();

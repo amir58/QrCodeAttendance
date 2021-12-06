@@ -20,6 +20,7 @@ public class DoctorsLoginActivity extends AppCompatActivity {
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     ActivityDoctorsLoginBinding binding;
     public static String doctorId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

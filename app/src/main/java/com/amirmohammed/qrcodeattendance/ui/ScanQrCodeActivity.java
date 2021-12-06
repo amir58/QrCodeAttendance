@@ -48,6 +48,7 @@ public class ScanQrCodeActivity extends AppCompatActivity {
                 });
             }
         });
+
         scannerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,9 +57,9 @@ public class ScanQrCodeActivity extends AppCompatActivity {
         });
     }
 
-    private void attendToDoctor(String lectureId){
-        String doctorId = lectureId.split(" ")[0];
-        String lectureName = lectureId.split(" ")[1] + " " + lectureId.split(" ")[2];
+    private void attendToDoctor(String qrCodeResult){
+        String doctorId = qrCodeResult.split(" ")[0];
+        String lectureName = qrCodeResult.split(" ")[1] + " " + qrCodeResult.split(" ")[2];
 
         Map<String,Object> map = new HashMap<>();
         map.put("studentName", studentName);

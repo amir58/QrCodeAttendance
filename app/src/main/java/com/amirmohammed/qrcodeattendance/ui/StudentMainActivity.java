@@ -49,8 +49,8 @@ public class StudentMainActivity extends AppCompatActivity {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         List<String> previousLectures = new ArrayList<>();
-                        for (DocumentSnapshot snapshot : value.getDocuments()){
-                            String previousLectureId= snapshot.getString("lectureName");
+                        for (DocumentSnapshot snapshot : value.getDocuments()) {
+                            String previousLectureId = snapshot.getString("lectureName");
                             previousLectures.add(previousLectureId);
                         }
 
@@ -64,24 +64,21 @@ public class StudentMainActivity extends AppCompatActivity {
     ActivityResultLauncher<String[]> permissionRequest =
             registerForActivityResult(new ActivityResultContracts
                             .RequestMultiplePermissions(), result -> {
-                        Boolean cameraGranted = result.getOrDefault(
-                                Manifest.permission.CAMERA, false);
+                        Boolean cameraGranted = result.getOrDefault(Manifest.permission.CAMERA, false);
 
                         if (cameraGranted != null && cameraGranted) {
-                            // Precise location access granted.
+                            // Precise camera access granted.
                             Intent intent = new Intent(StudentMainActivity.this, ScanQrCodeActivity.class);
                             startActivity(intent);
                         } else {
-                            // No location access granted.
+                            // No camera access granted.
                             Toast.makeText(StudentMainActivity.this, "You can't scan QR Code with out camera", Toast.LENGTH_LONG).show();
                         }
                     }
             );
 
     public void scanToAttend(View view) {
-        permissionRequest.launch(new String[]{
-                Manifest.permission.CAMERA,
-        });
+        permissionRequest.launch(new String[]{Manifest.permission.CAMERA,});
     }
 
 }
